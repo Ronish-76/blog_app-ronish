@@ -8,8 +8,15 @@ const register = async (req, res) => {
   try {
     const { username, email, password } = req.body;
 
-    if (!username || !email || !password) {
-      return res.status(400).json({ error: "All fields are required" });
+    // validate required fields and return which are missing to help the client
+    const missing = [];
+    if (!username) missing.push("username");
+    if (!email) missing.push("email");
+    if (!password) missing.push("password");
+    if (missing.length > 0) {
+      return res
+        .status(400)
+        .json({ error: "Missing required field(s)", missing });
     }
 
     // Check if user already exists by email
@@ -26,14 +33,11 @@ const register = async (req, res) => {
 
     await user.save();
 
-    // Never send back password
-    // const userData = {
-    //   id: user._id,
-    //   username: user.username,
-    //   email: user.email,
-    // };
-
-    res.status(201).json({ message: "User registered successfully", user });
+    // Exclude password from response
+    const { password: _pw, ...safeUser } = user.toObject();
+    res
+      .status(201)
+      .json({ message: "User registered successfully", user: safeUser });
   } catch (error) {
     console.error("Error registering user:", error);
     res.status(500).json({ error: "Server error. Please try again later." });
@@ -60,8 +64,18 @@ const login = async (req, res) => {
       return res.status(400).json({ error: "Invalid email or password" });
     }
 
+    // Ensure JWT secret is configured to avoid throwing inside jwt.sign
+    if (!config.JWT_SECRET) {
+      console.error(
+        "JWT_SECRET is not configured. Set JWT_SECRET in your environment."
+      );
+      return res
+        .status(500)
+        .json({ error: "Server configuration error: missing JWT_SECRET" });
+    }
+
     const token = jwt.sign({ id: user._id }, config.JWT_SECRET, {
-      expiresIn: config.JWT_EXPIRATION,
+      expiresIn: config.JWT_EXPIRATION || "1d",
     });
 
     // Exclude password before sending back user data

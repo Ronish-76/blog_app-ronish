@@ -12,6 +12,26 @@ const authController = require("../controllers/authController");
  *
  */
 router.post("/register", authController.register);
+// Login route
+/**
+ * @description routes for login
+ * @method POST
+ * @route POST /api/auth/v1/login
+ * @access Public
+ * @body { email, password }
+ * @returns { message, token, user } on success
+ * @returns { error } on failure
+ */
+router.post("/login", authController.login);
+
+// Get all users (no password field returned)
+/**
+ * @description get all users
+ * @method GET
+ * @route GET /api/auth/v1/users
+ * @access Public (consider protecting this in production)
+ */
+router.get("/users", authController.getAllUsers);
 
 // http method
 // GET, POST, PUT, DELETE, PATCH, OPTIONS, HEAD
