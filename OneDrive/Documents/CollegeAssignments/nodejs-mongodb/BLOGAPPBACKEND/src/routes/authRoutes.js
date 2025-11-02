@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const authController = require("../controllers/authController");
+const { authenticateToken, requireAdmin } = require("../middleware/authMiddleware");
 /**
  * @description routes for register
  * @method POST
@@ -29,9 +30,18 @@ router.post("/login", authController.login);
  * @description get all users
  * @method GET
  * @route GET /api/auth/v1/users
- * @access Public (consider protecting this in production)
+ * @access Private (admin only)
  */
-router.get("/users", authController.getAllUsers);
+router.get("/users", authenticateToken, requireAdmin, authController.getAllUsers);
+
+// Delete a user by ID
+/**
+ * @description delete a user by id
+ * @method DELETE
+ * @route DELETE /api/auth/v1/users/:userId
+ * @access Private (admin only)
+ */
+router.delete("/users/:userId", authenticateToken, requireAdmin, authController.deleteUser);
 
 // http method
 // GET, POST, PUT, DELETE, PATCH, OPTIONS, HEAD

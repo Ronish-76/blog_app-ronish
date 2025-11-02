@@ -6,11 +6,12 @@ const config = require("../configs/config");
 // Register a new user
 const register = async (req, res) => {
   try {
-    const { username, email, password } = req.body;
+    console.log("Request body:", req.body);
+    const { name, email, password } = req.body;
 
     // validate required fields and return which are missing to help the client
     const missing = [];
-    if (!username) missing.push("username");
+    if (!name) missing.push("name");
     if (!email) missing.push("email");
     if (!password) missing.push("password");
     if (missing.length > 0) {
@@ -26,7 +27,7 @@ const register = async (req, res) => {
     }
 
     const user = new User({
-      username,
+      name,
       email,
       password,
     });
@@ -103,11 +104,26 @@ const getAllUsers = async (req, res) => {
   }
 };
 
+// Get user profile by ID
+const getUserById = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const user = await User.findById(id).select("-password");
+    if (!user) {
+      return res.status(404).json({ error: "User not found" });
+    }
+    res.status(200).json({ user });
+  } catch (error) {
+    console.error("Error fetching user:", error);
+    res.status(500).json({ error: "Server error. Please try again later." });
+  }
+};
+
 // controller functions to delete a user by ID (optional enhancement) --- IGNORE ---
 const deleteUser = async (req, res) => {
   try {
-    const { userId } = req.params;
-    const user = await User.findByIdAndDelete(userId);
+    const { id } = req.params;
+    const user = await User.findByIdAndDelete(id);
     if (!user) {
       return res.status(404).json({ error: "User not found" });
     }
@@ -118,4 +134,4 @@ const deleteUser = async (req, res) => {
   }
 };
 // export the controller functions
-module.exports = { register, login, getAllUsers, deleteUser };
+module.exports = { register, login, getAllUsers, getUserById, deleteUser };
