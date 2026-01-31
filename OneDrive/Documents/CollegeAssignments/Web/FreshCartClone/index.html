@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FreshCart - SuperMarket For Fresh Grocery</title>
+    <meta name="description" content="Introduced a new model for online grocery shopping and convenient home delivery.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;500;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <header class="header">
+        <div class="container header-container">
+            <a href="#" class="logo">
+                <i class="fa-solid fa-leaf"></i> FreshCart
+            </a>
+            
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li><a href="#home" class="nav-link active">Home</a></li>
+                    <li><a href="#" class="nav-link">Dropdown Menu</a></li>
+                    <li><a href="#" class="nav-link">Mega menu</a></li>
+                    <li><a href="#" class="nav-link">Dashboard</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+                <div class="search-bar">
+                    <input type="text" placeholder="Search for products">
+                    <button><i class="fa-solid fa-magnifying-glass"></i></button>
+                </div>
+                <!-- 5 and 0 assumed to be badge numbers from user prompt usually -->
+                <button class="icon-btn" aria-label="Wishlist">
+                    <i class="fa-regular fa-heart"></i>
+                    <span class="badge">5</span>
+                </button>
+                <button class="icon-btn cart-btn" aria-label="Cart">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span class="badge">0</span>
+                </button>
+                <button class="mobile-toggle" aria-label="Menu">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="hero-bg">
+                <img src="bg_image.jpg" alt="Fresh vegetables background" class="hero-img">
+                <div class="overlay"></div>
+            </div>
+            <div class="container hero-content">
+                <span class="hero-badge">Opening Sale Discount 50%</span>
+                <h1 class="hero-title">SuperMarket For <br> Fresh Grocery</h1>
+                <p class="hero-subtitle">Introduced a new model for online grocery shopping and convenient home delivery.</p>
+                <div class="hero-btns">
+                    <a href="#shop" class="btn btn-primary">Shop Now <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Categories -->
+        <section id="categories" class="categories section-padding">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Featured Categories</h2>
+                    <a href="#" class="view-all">View All <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+                <!-- Flat grid for categories -->
+                <div class="categories-grid-simple">
+                   
+                    <div class="category-item">
+                        <div class="cat-icon"><i class="fa-solid fa-cow"></i></div> <!-- Icon placeholder -->
+                        <h3>Dairy, Bread & Eggs</h3>
+                    </div>
+
+                    <div class="category-item">
+                        <div class="cat-icon"><i class="fa-solid fa-cookie-bite"></i></div>
+                        <h3>Snack & Munchies</h3>
+                    </div>
+
+                    <div class="category-item">
+                        <div class="cat-icon"><i class="fa-solid fa-bread-slice"></i></div>
+                        <h3>Bakery & Biscuits</h3>
+                    </div>
+
+                    <div class="category-item">
+                        <div class="cat-icon"><i class="fa-solid fa-bowl-rice"></i></div>
+                        <h3>Instant Food</h3>
+                    </div>
+
+                    <div class="category-item">
+                        <div class="cat-icon"><i class="fa-solid fa-mug-hot"></i></div>
+                        <h3>Tea, Coffee & Drinks</h3>
+                    </div>
+
+                    <div class="category-item">
+                        <div class="cat-icon"><i class="fa-solid fa-wheat-awn"></i></div>
+                        <h3>Atta, Rice & Dal</h3>
+                    </div>
+
+                    <div class="category-item">
+                        <div class="cat-icon"><i class="fa-solid fa-baby"></i></div>
+                        <h3>Baby Care</h3>
+                    </div>
+
+                    <div class="category-item">
+                        <div class="cat-icon"><i class="fa-solid fa-drumstick-bite"></i></div>
+                        <h3>Chicken, Meat & Fish</h3>
+                    </div>
+
+                    <div class="category-item">
+                        <div class="cat-icon"><i class="fa-solid fa-pump-soap"></i></div>
+                        <h3>Cleaning Essentials</h3>
+                    </div>
+
+                    <div class="category-item">
+                        <div class="cat-icon"><i class="fa-solid fa-paw"></i></div>
+                        <h3>Pet Care</h3>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Promo Banners (Fruits, Baked Buns) -->
+        <section class="promos section-padding">
+            <div class="container promo-grid">
+                <div class="promo-card promo-dark">
+                    <div class="promo-content">
+                        <h3>Fruits & Vegetables</h3>
+                        <p>Get Upto 30% Off</p>
+                        <a href="#" class="btn btn-sm btn-dark">Shop Now</a>
+                    </div>
+                </div>
+                <div class="promo-card promo-light">
+                    <div class="promo-content">
+                        <h3>Freshly Baked Buns</h3>
+                        <p>Get Upto 25% Off</p>
+                        <a href="#" class="btn btn-sm btn-dark">Shop Now</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Popular Products -->
+        <section id="shop" class="products section-padding">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Popular Products</h2>
+                </div>
+                
+                <div class="product-grid">
+                    <!-- 1. Haldiram's Sev Bhujia -->
+                    <div class="product-card">
+                        <span class="badge-discount">14%</span>
+                        <div class="product-img-box">
+                            <div class="img-placeholder"></div>
+                            <div class="product-actions">
+                                <button title="Wishlist"><i class="fa-regular fa-heart"></i></button>
+                                <button title="View"><i class="fa-regular fa-eye"></i></button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <span class="category">Snack & Munchies</span>
+                            <h3 class="product-title">Haldiram's Sev Bhujia</h3>
+                            <div class="rating">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star-half-stroke"></i>
+                                <span class="review-count">(149)</span>
+                            </div>
+                            <div class="price-row">
+                                <span class="price">$18</span>
+                                <span class="old-price">$24</span>
+                                <button class="add-cart-btn"><i class="fa-solid fa-plus"></i> Add</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2. NutriChoice Digestive -->
+                    <div class="product-card">
+                        <div class="product-img-box">
+                            <div class="img-placeholder"></div>
+                            <div class="product-actions">
+                                <button title="Wishlist"><i class="fa-regular fa-heart"></i></button>
+                                <button title="View"><i class="fa-regular fa-eye"></i></button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <span class="category">Bakery & Biscuits</span>
+                            <h3 class="product-title">NutriChoice Digestive</h3>
+                            <div class="rating">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star-half-stroke"></i>
+                                <span class="review-count">(25)</span>
+                            </div>
+                            <div class="price-row">
+                                <span class="price">$24</span>
+                                <button class="add-cart-btn"><i class="fa-solid fa-plus"></i> Add</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 3. Cadbury 5 Star Chocolate -->
+                    <div class="product-card">
+                        <div class="product-img-box">
+                            <div class="img-placeholder"></div>
+                            <div class="product-actions">
+                                <button title="Wishlist"><i class="fa-regular fa-heart"></i></button>
+                                <button title="View"><i class="fa-regular fa-eye"></i></button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <span class="category">Bakery & Biscuits</span>
+                            <h3 class="product-title">Cadbury 5 Star Chocolate</h3>
+                            <div class="rating">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <span class="review-count">(469)</span>
+                            </div>
+                            <div class="price-row">
+                                <span class="price">$32</span>
+                                <span class="old-price">$35</span>
+                                <button class="add-cart-btn"><i class="fa-solid fa-plus"></i> Add</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 4. Onion Flavour Potato -->
+                    <div class="product-card">
+                        <span class="badge-hot" style="background:var(--danger); color:white; padding:0.25rem 0.75rem; border-radius:99px; font-size:0.75rem; position:absolute; top:1rem; left:1rem; z-index:5;">Hot</span>
+                        <div class="product-img-box">
+                            <div class="img-placeholder"></div>
+                            <div class="product-actions">
+                                <button title="Wishlist"><i class="fa-regular fa-heart"></i></button>
+                                <button title="View"><i class="fa-regular fa-eye"></i></button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <span class="category">Snack & Munchies</span>
+                            <h3 class="product-title">Onion Flavour Potato</h3>
+                            <div class="rating">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star-half-stroke"></i>
+                                <i class="fa-regular fa-star"></i>
+                                <span class="review-count">(456)</span>
+                            </div>
+                            <div class="price-row">
+                                <span class="price">$3</span>
+                                <span class="old-price">$5</span>
+                                <button class="add-cart-btn"><i class="fa-solid fa-plus"></i> Add</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 5. Salted Instant Popcorn -->
+                    <div class="product-card">
+                        <div class="product-img-box">
+                            <div class="img-placeholder"></div>
+                            <div class="product-actions">
+                                <button title="Wishlist"><i class="fa-regular fa-heart"></i></button>
+                                <button title="View"><i class="fa-regular fa-eye"></i></button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <span class="category">Instant Food</span>
+                            <h3 class="product-title">Salted Instant Popcorn</h3>
+                            <div class="rating">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star-half-stroke"></i>
+                                <span class="review-count">(39)</span>
+                            </div>
+                            <div class="price-row">
+                                <span class="price">$13</span>
+                                <span class="old-price">$18</span>
+                                <button class="add-cart-btn"><i class="fa-solid fa-plus"></i> Add</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 6. Blueberry Greek Yogurt -->
+                    <div class="product-card">
+                         <span class="badge-discount">Sale</span>
+                        <div class="product-img-box">
+                            <div class="img-placeholder"></div>
+                            <div class="product-actions">
+                                <button title="Wishlist"><i class="fa-regular fa-heart"></i></button>
+                                <button title="View"><i class="fa-regular fa-eye"></i></button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <span class="category">Dairy, Bread & Eggs</span>
+                            <h3 class="product-title">Blueberry Greek Yogurt</h3>
+                            <div class="rating">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star-half-stroke"></i>
+                                <span class="review-count">(189)</span>
+                            </div>
+                            <div class="price-row">
+                                <span class="price">$18</span>
+                                <span class="old-price">$24</span>
+                                <button class="add-cart-btn"><i class="fa-solid fa-plus"></i> Add</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 7. Britannia Cheese Slices -->
+                    <div class="product-card">
+                        <div class="product-img-box">
+                            <div class="img-placeholder"></div>
+                            <div class="product-actions">
+                                <button title="Wishlist"><i class="fa-regular fa-heart"></i></button>
+                                <button title="View"><i class="fa-regular fa-eye"></i></button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <span class="category">Dairy, Bread & Eggs</span>
+                            <h3 class="product-title">Britannia Cheese Slices</h3>
+                            <div class="rating">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <span class="review-count">(345)</span>
+                            </div>
+                            <div class="price-row">
+                                <span class="price">$24</span>
+                                <button class="add-cart-btn"><i class="fa-solid fa-plus"></i> Add</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 8. Kellogg's Original Cereals -->
+                    <div class="product-card">
+                        <div class="product-img-box">
+                            <div class="img-placeholder"></div>
+                            <div class="product-actions">
+                                <button title="Wishlist"><i class="fa-regular fa-heart"></i></button>
+                                <button title="View"><i class="fa-regular fa-eye"></i></button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <span class="category">Instant Food</span>
+                            <h3 class="product-title">Kellogg's Original Cereals</h3>
+                            <div class="rating">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                                <span class="review-count">(90)</span>
+                            </div>
+                            <div class="price-row">
+                                <span class="price">$32</span>
+                                <span class="old-price">$35</span>
+                                <button class="add-cart-btn"><i class="fa-solid fa-plus"></i> Add</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 9. Slurrp Millet Chocolate -->
+                    <div class="product-card">
+                        <div class="product-img-box">
+                            <div class="img-placeholder"></div>
+                            <div class="product-actions">
+                                <button title="Wishlist"><i class="fa-regular fa-heart"></i></button>
+                                <button title="View"><i class="fa-regular fa-eye"></i></button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <span class="category">Snack & Munchies</span>
+                            <h3 class="product-title">Slurrp Millet Chocolate</h3>
+                            <div class="rating">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star-half-stroke"></i>
+                                <span class="review-count">(90)</span>
+                            </div>
+                            <div class="price-row">
+                                <span class="price">$3</span>
+                                <span class="old-price">$5</span>
+                                <button class="add-cart-btn"><i class="fa-solid fa-plus"></i> Add</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 10. Amul Butter -->
+                    <div class="product-card">
+                        <div class="product-img-box">
+                            <div class="img-placeholder"></div>
+                            <div class="product-actions">
+                                <button title="Wishlist"><i class="fa-regular fa-heart"></i></button>
+                                <button title="View"><i class="fa-regular fa-eye"></i></button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <span class="category">Dairy, Bread & Eggs</span>
+                            <h3 class="product-title">Amul Butter - 500 g</h3>
+                            <div class="rating">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star-half-stroke"></i>
+                                <span class="review-count">(90)</span>
+                            </div>
+                            <div class="price-row">
+                                <span class="price">$13</span>
+                                <span class="old-price">$18</span>
+                                <button class="add-cart-btn"><i class="fa-solid fa-plus"></i> Add</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Daily Best Sells (New Title as requested) -->
+        <section class="section-padding">
+            <div class="container">
+               <h2 class="section-title">Daily Best Sells</h2>
+               <!-- Placeholder for best sells if user wants more, 
+                    but likely they just wanted this header to exist -->
+            </div>
+        </section>
+
+        <!-- Features / Value Prop (Updated content) -->
+        <section class="features section-padding" style="background:var(--light);">
+            <div class="container">
+                <div class="features-grid">
+                    <div class="feature-card">
+                         <div class="icon-box icon-green"><i class="fa-solid fa-clock"></i></div>
+                        <h3>10 Minute Grocery Now</h3>
+                        <p>Get your order delivered to your doorstep at the earliest from FreshCart pickup stores near you.</p>
+                    </div>
+                    <div class="feature-card">
+                         <div class="icon-box icon-orange"><i class="fa-solid fa-gift"></i></div>
+                        <h3>Best Prices & Offers</h3>
+                        <p>Cheaper prices than your local supermarket, great cashback offers to top it off.</p>
+                    </div>
+                     <div class="feature-card">
+                         <div class="icon-box icon-blue"><i class="fa-solid fa-box-open"></i></div>
+                        <h3>Wide Assortment</h3>
+                        <p>Choose from 5000+ products across food, personal care, household & other categories.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="icon-box icon-green"><i class="fa-solid fa-rotate-left"></i></div>
+                        <h3>Easy Returns</h3>
+                        <p>Not satisfied with a product? Return it at the doorstep & get a refund within hours.</p>
+                    </div>
+                </div>
+                <!-- Shipping Banner Part -->
+                <div style="margin-top:2rem; text-align:center;">
+                    <h3>Free Shipping on orders over $100</h3>
+                    <p class="text-light">Free Shipping to First-Time Customers Only, After promotions and discounts are applied.</p>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-bottom">
+                    <p>&copy; 2024 FreshCart. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+    </main>
+</body>
+</html>
